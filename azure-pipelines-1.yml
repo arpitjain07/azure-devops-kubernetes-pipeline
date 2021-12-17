@@ -1,0 +1,16 @@
+trigger:
+- master
+
+pool:
+  name: Self-Hosted-Agent
+
+- task: Docker@2
+  displayName: Build an image
+  inputs: 
+    command: build
+    dockerfile: '$(System.DefaultWorkingDirectory)/Dockerfile'
+    buildContext: '$(System.DefaultWorkingDirectory)'
+    repository: 014280107279.dkr.ecr.ap-south-1.amazonaws.com/awsdockerrepository
+
+ 
+    
