@@ -13,5 +13,12 @@ steps:
     buildContext: '$(System.DefaultWorkingDirectory)'
     repository: 014280107279.dkr.ecr.ap-south-1.amazonaws.com/awsdockerrepository
 
- 
-    
+- task: ECRPushImage@1
+  inputs:
+    awsCredentials: 'helloworld'
+    regionName: 'ap-south-1'
+    imageSource: 'imageid'
+    sourceImageName: 014280107279.dkr.ecr.ap-south-1.amazonaws.com/awsdockerrepository 
+    sourceImageTag: 35
+    pushTag: 35
+    repositoryName: awsdockerrepository
