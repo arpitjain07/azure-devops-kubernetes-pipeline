@@ -4,6 +4,7 @@ trigger:
 pool:
   name: Self-Hosted-Agent
 
+steps:
 - task: Docker@2
   displayName: Build an image
   inputs: 
