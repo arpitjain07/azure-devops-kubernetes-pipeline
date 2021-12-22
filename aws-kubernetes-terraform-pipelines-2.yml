@@ -22,3 +22,9 @@ steps:
     backendAWSBucketName: 'terraform-state-eks-devops-1'
     backendAWSKey: 'kubernetes-dev.tfstate'
 
+- task: TerraformTaskV2@2
+  inputs:
+    provider: 'aws'
+    command: 'apply'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/configuration/iaac/aws/kubernetes'
+    environmentServiceNameAWS: 'aws-terraform-eks'
